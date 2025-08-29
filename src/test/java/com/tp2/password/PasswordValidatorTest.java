@@ -6,20 +6,34 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class PasswordValidatorTest {
-
+    private PasswordValidator validator = new PasswordValidator();
     // TODO: Replace these lines with your tests
     @Test
-    void exampleTest(){
-        assertEquals(4, 2 + 1);
+    void Testpasswordlenghtless8(){
+        assertFalse(validator.isValid("1Mnas<"));
     }
-
-//    Missing tests:
-//
-//- Password with less than 8 characters should be invalid
-//- Password with 8 or more characters should pass length validation
-//- Password without uppercase letter should be invalid
-//- Password without lowercase letter should be invalid
-//- Password without number should be invalid
-//- Password without special character should be invalid
-//- Password meeting all criteria should be valid
+    @Test
+    void Testpasswordlenghtmore8(){
+        assertFalse(validator.isValid("anasduwoasbd"));
+    }
+    @Test
+    void Testpasswordupper(){
+        assertFalse(validator.isValid("1mnasmnw<"));
+    }
+    @Test
+    void Testpasswordlower(){
+        assertFalse(validator.isValid("1MASJDNW<"));
+    }
+    @Test
+    void Testpasswordnumber(){
+        assertFalse(validator.isValid("MASJDNW<"));
+    }
+    @Test
+    void Testpasswordspecial(){
+        assertFalse(validator.isValid("1MASDDNW"));
+    }
+    @Test
+    void Testpassword(){
+        assertTrue(validator.isValid("1MAsJdNW<"));
+    }
 }

@@ -4,27 +4,59 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RomanNumeralsTest {
-
-    // TODO: Replace these lines with your tests
+    private RomanNumerals romanNumerals = new RomanNumerals();
     @Test
-    void exampleTest(){
-        assertEquals(4, 2 + 1);
+    void TestOne(){
+        assertEquals("I", romanNumerals.convert(1));
     }
-
-//    Missing tests:
-//
-//- Convert 1 to "I"
-//- Convert 5 to "V"
-//- Convert 10 to "X"
-//- Convert 4 to "IV" (subtraction case)
-//- Convert 9 to "IX" (subtraction case)
-//- Convert 40 to "XL"
-//- Convert 50 to "L"
-//- Convert 90 to "XC"
-//- Convert 100 to "C"
-//- Convert 400 to "CD"
-//- Convert 500 to "D"
-//- Convert 900 to "CM"
-//- Convert 1000 to "M"
-//- Convert complex numbers like 1994 to "MCMXCIV"
+    @Test
+    void TestFive(){
+        assertEquals("V", romanNumerals.convert(5));
+    }
+    @Test
+    void TestTen(){
+        assertEquals("X", romanNumerals.convert(10));
+    }
+    @Test
+    void TestFour(){
+        assertEquals("IV", romanNumerals.convert(4));
+    }
+    @Test
+    void TestNine(){
+        assertEquals("IX", romanNumerals.convert(9));
+    }
+    @Test
+    void TestForty(){
+        assertEquals("XL", romanNumerals.convert(40));
+    }
+    @Test
+    void TestFifty(){
+        assertEquals("L", romanNumerals.convert(50));
+    }
+    @Test
+    void TestNinety(){
+        assertEquals("XC", romanNumerals.convert(90));
+    }
+    @Test
+    void TestHundred(){
+        assertEquals("C", romanNumerals.convert(100));
+    }
+    @Test
+    void TestFourHundred(){
+        assertEquals("CD", romanNumerals.convert(400));
+    }
+    @Test
+    void TestFiveHundred(){
+        assertEquals("D", romanNumerals.convert(500));
+    }
+    @Test
+    void TestNineHundred(){
+        assertEquals("CM", romanNumerals.convert(900));
+    }
+    @Test
+    void TestThousand(){assertEquals("M", romanNumerals.convert(1000));}
+    @Test
+    void TestComplex(){
+        assertEquals("MCMXCIV", romanNumerals.convert(1994));
+    }
 }

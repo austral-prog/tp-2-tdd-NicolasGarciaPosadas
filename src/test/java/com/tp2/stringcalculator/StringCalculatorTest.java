@@ -5,19 +5,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class StringCalculatorTest {
-
-    // TODO: Replace these lines with your tests
+    private StringCalculator stringCalculator = new StringCalculator();
     @Test
-    void exampleTest(){
-        assertEquals(4, 2 + 1);
+    void Test(){
+        assertEquals(2,stringCalculator.add("2"));
     }
+    @Test
+    void Test2(){assertEquals(5,stringCalculator.add("2,3"));}
+    @Test
+    void Test3(){assertEquals(10,stringCalculator.add("2,3\n5"));}
+    @Test
+    void Test4(){assertEquals(0,stringCalculator.add(""));}
+    @Test
+    void Test5(){assertEquals(27,stringCalculator.add("2,5,20"));}
+    @Test
+    void Test6(){assertThrows(IllegalArgumentException.class,()->stringCalculator.add("2,5,-20"));}
 
-//    Missing tests:
-//
-//- Empty string should return 0
-//- Single number should return that number
-//- Two numbers separated by comma should return their sum
-//- Multiple numbers separated by comma should return their sum
-//- Numbers separated by newline should work as delimiter
-//- Negative numbers should throw IllegalArgumentException
 }
